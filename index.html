@@ -787,18 +787,37 @@ If your product page isn’t converting as well as it should — this is for you
     </div>
 
     
-    <form action="https://formspree.io/f/mreojayz" method="POST" style="width:100%; max-width:520px; margin-top:28px; display:flex; flex-direction:column; gap:14px;">
-      <input type="text" name="name" placeholder="Your Name" required
-        style="padding:14px 16px; background:#0b1220; color:#fff; border:1px solid rgba(255,255,255,0.12); border-radius:14px; font-size:16px;">
-      <input type="email" name="email" placeholder="Your Email" required
-        style="padding:14px 16px; background:#0b1220; color:#fff; border:1px solid rgba(255,255,255,0.12); border-radius:14px; font-size:16px;">
-      <textarea name="message" rows="5" placeholder="Tell me about your product page and what you need written." required
-        style="padding:14px 16px; background:#0b1220; color:#fff; border:1px solid rgba(255,255,255,0.12); border-radius:14px; font-size:16px; resize:vertical;"></textarea>
-<input type="hidden" name="_next" value="https://verbaforgej.github.io/VerbaForgeJ-/thank-you.html">        
-      <button type="submit" class="btn btn-primary" style="width:100%; border:none; cursor:pointer;">Request Copy</button>
-    <p style="margin-top:12px;color:#94a3b8;font-size:0.95rem;">After you press Request Copy, Formspree will confirm the submission on the next screen.</p></form>
-
-  </div>
+  <form id="contact-form" action="https://formspree.io/f/mreojayz" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Paste your product link here..." required></textarea>
+<button id="submit-btn" type="submit">Request Copy</button>
+</form>
+<script>
+const form = document.getElementById("contact-form");
+const button = document.getElementById("submit-btn");
+form.addEventListener("submit", async function (e) {
+e.preventDefault();
+button.textContent = "Sending...";
+button.disabled = true;
+const data = new FormData(form);
+const response = await fetch("https://formspree.io/f/mreojayz", {
+method: "POST",
+body: data,
+headers: {
+"Accept": "application/json"
+}
+});
+if (response.ok) {
+window.location.href = "https://verbaforgej.github.io/VerbaForgeJ-/thank-you.html";
+} else {
+button.textContent = "Request Copy";
+button.disabled = false;
+alert("Something went wrong. Please try again.");
+}
+});
+</script>
+</div>
 </section>
 
 <footer>
