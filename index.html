@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VerbaForgeJ | Product Page Improvement</title>
+  <meta name="description" content="Premium product page improvement through stronger copy, better structure, mock-up direction, and conversion-focused upgrades." />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0b1123;
+      --card: rgba(14, 23, 48, 0.78);
+      --line: rgba(115, 149, 255, 0.16);
+      --text: #edf2ff;
+      --muted: #9fb0d9;
+      --accent: #6ea8ff;
+      --accent-2: #98c2ff;
+      --glow: 0 0 0 1px rgba(110, 168, 255, 0.12), 0 18px 50px rgba(0, 0, 0, 0.45);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(74, 122, 255, 0.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(110, 168, 255, 0.12), transparent 24%),
+        linear-gradient(180deg, #040714 0%, #060a18 45%, #050816 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(5, 8, 22, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .brand span {
+      color: var(--accent-2);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 92px 0 62px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel,
+    .card,
+    .price,
+    .step,
+    .form-shell {
+      background: linear-gradient(180deg, rgba(13, 20, 42, 0.86), rgba(8, 13, 29, 0.92));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--glow);
+    }
+
+    .panel {
+      padding: 34px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(110, 168, 255, 0.1);
+      border: 1px solid rgba(110, 168, 255, 0.16);
+      color: var(--accent-2);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 1.04;
+      margin: 0 0 16px;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 720px;
+      margin-bottom: 26px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #7eb5ff);
+      color: #04101f;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text);
+    }
+
+    .trust-line {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 6px;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .mini-card {
+      padding: 22px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(15, 26, 54, 0.9), rgba(8, 13, 29, 0.95));
+      border: 1px solid var(--line);
+      box-shadow: var(--glow);
+    }
+
+    .mini-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .section {
+      padding: 26px 0 74px;
+    }
+
+    .section-title {
+      margin-bottom: 24px;
+      max-width: 760px;
+    }
+
+    .section-title .tag {
+      color: var(--accent-2);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.08;
+      margin: 0 0 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.02rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .statement {
+      padding: 28px;
+    }
+
+    .statement h3 {
+      margin: 0 0 12px;
+      font-size: 1.45rem;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .statement p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .checks {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .checks li {
+      color: var(--text);
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .checks li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      position: absolute;
+      left: 0;
+      top: 10px;
+      box-shadow: 0 0 18px rgba(110, 168, 255, 0.8);
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .price {
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price.featured {
+      border-color: rgba(110, 168, 255, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .price .plan {
+      color: var(--accent-2);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .price .amount {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .price p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .price ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+      color: var(--text);
+    }
+
+    .price li {
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .price li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      padding: 24px;
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(110, 168, 255, 0.12);
+      color: var(--accent-2);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .contact-copy {
+      padding: 28px;
+    }
+
+    .contact-copy h3 {
+      margin: 0 0 14px;
+      font-size: 1.5rem;
+      line-height: 1.12;
+    }
+
+    .contact-copy p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .contact-points {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+      color: var(--text);
+    }
+
+    .form-shell {
+      padding: 28px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      display: grid;
+      gap: 8px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 14px 15px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(110, 168, 255, 0.45);
+      box-shadow: 0 0 0 4px rgba(110, 168, 255, 0.12);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 4px;
+    }
+
+    footer {
+      padding: 26px 0 42px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 24px;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .pricing,
+      .steps,
+      .contact-grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+
+      .price.featured {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .panel,
+      .card,
+      .price,
+      .step,
+      .form-shell,
+      .statement,
+      .contact-copy {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a href="#top" class="brand">Verba<span>ForgeJ</span></a>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#why">Why It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="panel">
+          <div class="eyebrow">Premium Product Page Improvement</div>
+          <h1>Turn your product page into something people actually want to buy from.</h1>
+          <p class="lead">
+            Clearer descriptions, stronger structure, premium mock-up direction, and sharper page upgrades
+            that make your product feel more valuable, more trustworthy, and easier to buy.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Improve My Product Page</a>
+            <a class="btn btn-secondary" href="#services">See What Changes</a>
+          </div>
+
+          <div class="trust-line">
+            No pressure — send your page, I’ll review it, and point you to the best next step.
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="mini-card">
+            <h3>Clearer Copy</h3>
+            <p>Make the value of your product obvious faster, so customers get it without effort.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Stronger Structure</h3>
+            <p>Guide attention better with a layout and message flow that feels cleaner and easier to trust.</p>
+          </div>
+          <div class="mini-card">
+            <h3>More Premium Feel</h3>
+            <p>Upgrade how the page reads and looks so the product feels worth the price before they even scroll far.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="tag">Services</div>
+          <h2>This is where your page improves.</h2>
+          <p>
+            VerbaForgeJ improves how your product page reads, looks, and feels — so customers understand
+            the value faster and feel more confident buying.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Conversion-Focused Copy</h3>
+            <p>
+              Your product description should make the product feel worth buying — not just explain what it is.
+              Stronger wording helps people understand value faster and buy with more confidence.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Mock-Up Direction</h3>
+            <p>
+              See how your product page or visuals could feel more premium before changing everything.
+              Cleaner presentation can lift perceived value instantly.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Product Page Upgrades</h3>
+            <p>
+              Improve how your page looks, reads, and convinces so it feels sharper, cleaner, and built to convert
+              instead of just existing online.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="wrap split">
+        <div class="panel statement">
+          <h3>Most product pages don’t have a product problem. They have a presentation problem.</h3>
+          <p>
+            Unclear descriptions, weak structure, and flat presentation stop people from buying even when the product itself is good.
+          </p>
+        </div>
+
+        <div class="panel statement">
+          <h3>This is for businesses with product pages that:</h3>
+          <ul class="checks">
+            <li>Feel flat, unclear, or underwhelming</li>
+            <li>Do not convert as well as they should</li>
+            <li>Do not reflect the quality of the actual product</li>
+            <li>Need stronger wording, better structure, or both</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="tag">Why VerbaForgeJ</div>
+          <h2>Focused on one thing — improving how product pages look, read, and convert.</h2>
+          <p>
+            A better product page changes how the product is perceived. It reduces confusion, increases trust,
+            and makes buying feel easier.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Make the product feel more valuable</h3>
+            <p>Stronger language and sharper presentation change how the product is perceived before price becomes the issue.</p>
+          </article>
+
+          <article class="card">
+            <h3>Reduce confusion</h3>
+            <p>Clearer copy makes it obvious what the product is, why it matters, and why the customer should care now.</p>
+          </article>
+
+          <article class="card">
+            <h3>Increase trust</h3>
+            <p>A page that feels cleaner, more polished, and more intentional is easier to believe and easier to buy from.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="tag">Pricing</div>
+          <h2>Simple packages. Clear outcomes.</h2>
+          <p>
+            Pick the level that fits what your page needs right now.
+          </p>
+        </div>
+
+        <div class="pricing">
+          <article class="price">
+            <div class="plan">Basic</div>
+            <div class="amount">£10</div>
+            <p>For pages that mainly need stronger product wording.</p>
+            <ul>
+              <li>Rewritten product description</li>
+              <li>Clearer value communication</li>
+              <li>Stronger sales wording</li>
+            </ul>
+          </article>
+
+          <article class="price featured">
+            <div class="plan">Standard</div>
+            <div class="amount">£20</div>
+            <p>For pages that need better wording and a stronger visual direction.</p>
+            <ul>
+              <li>Rewritten product description</li>
+              <li>Mock-up or layout direction</li>
+              <li>Sharper positioning</li>
+            </ul>
+          </article>
+
+          <article class="price">
+            <div class="plan">Premium</div>
+            <div class="amount">£30</div>
+            <p>For a fuller upgrade across copy, structure, and conversion flow.</p>
+            <ul>
+              <li>Full page improvement direction</li>
+              <li>Copy and structure upgrades</li>
+              <li>Premium sales-focused positioning</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="tag">How It Works</div>
+          <h2>Simple process. Fast direction. Stronger page.</h2>
+          <p>
+            Clear, direct, and focused on improving your page without wasting time.
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">1</div>
+            <h3>Send your product page</h3>
+            <p>I review what is holding it back and where the biggest improvement can happen first.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">2</div>
+            <h3>Get a stronger direction</h3>
+            <p>You get improved copy, cleaner structure direction, mock-up ideas, or a fuller upgrade plan.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">3</div>
+            <h3>Upgrade the page</h3>
+            <p>Your product page becomes clearer, more premium, and more persuasive to buy from.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap contact-grid">
+        <div class="panel contact-copy">
+          <h3>Start Your Project</h3>
+          <p>
+            Send a few details and I’ll review the page and point you to the best next step.
+          </p>
+          <p>
+            Most product pages can be improved with clearer copy, stronger structure, better visual direction, or all three.
+          </p>
+
+          <div class="contact-points">
+            <div>Usually replied to within 24 hours.</div>
+            <div>Built for brands that want their products to feel worth buying.</div>
+            <div>Focused on sales impact, not filler.</div>
+          </div>
+        </div>
+
+        <div class="form-shell">
+          <form action="https://formspree.io/f/mreojayz" method="POST">
+            <input type="hidden" name="_subject" value="New VerbaForgeJ project request" />
+            <input type="hidden" name="_next" value="https://verbaforgej.github.io/VerbaForgeJ-/thank-you.html" />
+
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Your email" required />
+            </label>
+
+            <label>
+              Service Needed
+              <select name="service" required>
+                <option value="">Select a service</option>
+                <option>Product Description Rewrite</option>
+                <option>Mock-Up Direction</option>
+                <option>Full Product Page Upgrade</option>
+              </select>
+            </label>
+
+            <label>
+              Product Page Link
+              <input type="url" name="product_page" placeholder="Paste your product page link" />
+            </label>
+
+            <label>
+              Project Details
+              <textarea name="message" placeholder="Tell me what the product is, what is not working, and what you want improved." required></textarea>
+            </label>
+
+            <button class="btn btn-primary" type="submit">Request Copy</button>
+          </form>
+
+          <div class="form-note">
+            After you press Request Copy, the form will submit through Formspree and redirect to your thank-you page.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div>© 2026 VerbaForgeJ</div>
+      <div>Product descriptions, mock-up direction, and product page improvement.</div>
+    </div>
+  </footer>
+</body>
+</html>
