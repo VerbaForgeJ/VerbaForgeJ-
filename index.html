@@ -777,48 +777,58 @@
         </div>
 
         <div class="form-shell">
-          <form action="https://formspree.io/f/mreojayz" method="POST">
-            <input type="hidden" name="_subject" value="New VerbaForgeJ project request" />
-            <input type="hidden" name="_next" value="https://verbaforgej.github.io/VerbaForgeJ-/thank-you.html" />
+  <form id="contact-form">
+    <input type="hidden" name="_subject" value="New VerbaForgeJ project request" />
 
-            <label>
-              Name
-              <input type="text" name="name" placeholder="Your name" required />
-            </label>
+    <label>
+      Name
+      <input type="text" name="name" required />
+    </label>
 
-            <label>
-              Email
-              <input type="email" name="email" placeholder="Your email" required />
-            </label>
+    <label>
+      Email
+      <input type="email" name="email" required data-fs-field />
+    </label>
 
-            <label>
-              Service Needed
-              <select name="service" required>
-                <option value="">Select a service</option>
-                <option>Product Description Rewrite</option>
-                <option>Mock-Up Direction</option>
-                <option>Full Product Page Upgrade</option>
-              </select>
-            </label>
+    <label>
+      Service Needed
+      <select name="service" required data-fs-field>
+        <option value="">Select</option>
+        <option>Product Description</option>
+        <option>Mock-Up</option>
+        <option>Full Upgrade</option>
+      </select>
+    </label>
 
-            <label>
-              Product Page Link
-              <input type="url" name="product_page" placeholder="Paste your product page link" />
-            </label>
+    <label>
+      Product Page Link
+      <input type="url" name="product_page" />
+    </label>
 
-            <label>
-              Project Details
-              <textarea name="message" placeholder="Tell me what the product is, what is not working, and what you want improved." required></textarea>
-            </label>
+    <label>
+      Project Details
+      <textarea name="message" required data-fs-field></textarea>
+    </label>
 
-            <button class="btn btn-primary" type="submit">Request Copy</button>
-          </form>
+    <button class="btn btn-primary" type="submit">Start My Upgrade</button>
+  </form>
+</div>
 
-          <div class="form-note">
-            After you press Request Copy, the form will submit through Formspree and redirect to your thank-you page.
-          </div>
-        </div>
-      </div>
+<script>
+  window.formspree = window.formspree || function () {
+    (formspree.q = formspree.q || []).push(arguments);
+  };
+
+  formspree('initForm', {
+    formElement: '#contact-form',
+    formId: 'mreojayz',
+    onSuccess: function () {
+      window.location.href = 'https://verbaforgej.github.io/VerbaForgeJ-/thank-you.html';
+    }
+  });
+</script>
+
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
     </section>
   </main>
 
