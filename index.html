@@ -167,7 +167,7 @@ img {
 .hero-logo {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 220px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -191,14 +191,13 @@ img {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: 2px;
-  width: 52%;
-  height: 18px;
+  bottom: -4px;
+  width: 60%;
+  height: 24px;
   transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(70, 140, 255, 0.22), transparent 70%);
-  filter: blur(16px);
+  background: radial-gradient(circle, rgba(70, 140, 255, 0.35), transparent 70%);
+  filter: blur(18px);
   z-index: 0;
-  pointer-events: none;
 }
 
 .hero-logo img {
@@ -209,7 +208,7 @@ img {
   display: block;
   position: relative;
   z-index: 1;
-  transform: translateY(10px);
+  transform: translateY(18px);
   transition: transform 0.3s ease;
   filter:
     drop-shadow(0 24px 55px rgba(0, 102, 255, 0.55))
@@ -231,7 +230,8 @@ img {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-top: -6px;
+  margin-bottom: 8px;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
 }
 
