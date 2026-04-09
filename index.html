@@ -146,7 +146,7 @@ img {
 }
 
 .panel {
-  padding: 22px 28px 28px;
+  padding: 18px 28px 28px;
   position: relative;
   overflow: hidden;
   box-shadow: var(--glow-strong);
@@ -157,8 +157,17 @@ img {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 12%, rgba(65, 125, 255, 0.16), transparent 24%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 20%);
+    radial-gradient(circle at 50% 10%, rgba(65, 125, 255, 0.18), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 20%);
+  pointer-events: none;
+}
+
+.panel::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 180px;
+  background: linear-gradient(180deg, rgba(3, 8, 22, 0), rgba(3, 8, 22, 0.28) 60%, rgba(3, 8, 22, 0.5));
   pointer-events: none;
 }
 
@@ -178,10 +187,10 @@ img {
 .hero-logo::before {
   content: "";
   position: absolute;
-  inset: -20px 0 0;
+  inset: -18px 0 0;
   background:
-    radial-gradient(circle at center, rgba(0, 120, 255, 0.30), transparent 48%),
-    radial-gradient(circle at center, rgba(0, 70, 255, 0.16), transparent 68%);
+    radial-gradient(circle at center, rgba(0, 120, 255, 0.34), transparent 44%),
+    radial-gradient(circle at center, rgba(0, 70, 255, 0.16), transparent 66%);
   filter: blur(42px);
   z-index: 0;
   pointer-events: none;
@@ -198,6 +207,7 @@ img {
   background: radial-gradient(circle, rgba(70, 140, 255, 0.35), transparent 70%);
   filter: blur(18px);
   z-index: 0;
+  pointer-events: none;
 }
 
 .hero-logo img {
@@ -209,14 +219,17 @@ img {
   position: relative;
   z-index: 1;
   transform: translateY(18px);
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease, filter 0.35s ease;
   filter:
     drop-shadow(0 24px 55px rgba(0, 102, 255, 0.55))
     drop-shadow(0 0 65px rgba(0, 140, 255, 0.22));
 }
 
 .hero-logo img:hover {
-  transform: translateY(10px) scale(1.02);
+  transform: translateY(18px) scale(1.02);
+  filter:
+    drop-shadow(0 28px 60px rgba(0, 102, 255, 0.62))
+    drop-shadow(0 0 78px rgba(0, 140, 255, 0.28));
 }
 
 .eyebrow {
@@ -232,22 +245,25 @@ img {
   text-transform: uppercase;
   margin-top: -6px;
   margin-bottom: 8px;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.02),
+    0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 h1 {
   font-size: 4rem;
-  line-height: 0.94;
-  margin: 0 0 18px;
-  letter-spacing: -0.06em;
-  max-width: 11ch;
+  line-height: 0.92;
+  margin: 0 0 16px;
+  letter-spacing: -0.065em;
+  max-width: 10.5ch;
 }
 
 .lead {
   color: var(--muted);
-  font-size: 1.12rem;
-  max-width: 720px;
-  margin-bottom: 30px;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  max-width: 680px;
+  margin-bottom: 28px;
 }
 
 .cta-row {
@@ -278,7 +294,7 @@ h1 {
 }
 
 .btn-primary:hover {
-  box-shadow: 0 20px 40px rgba(87, 141, 255, 0.38);
+  box-shadow: 0 22px 44px rgba(87, 141, 255, 0.4);
 }
 
 .btn-secondary {
@@ -667,29 +683,39 @@ footer {
   }
 
   .hero-logo {
-    height: 200px;
-    margin-bottom: 0;
-  }
+  height: 188px;
+  margin-bottom: -2px;
+}
 
-  .hero-logo img {
-    width: 128%;
-    max-width: none;
-    transform: translateY(8px);
-  }
+.hero-logo::after {
+  width: 66%;
+  height: 20px;
+}
 
-  .hero-logo img:hover {
-    transform: translateY(8px) scale(1.02);
-  }
+.hero-logo img {
+  width: 126%;
+  max-width: none;
+  transform: translateY(14px);
+}
 
-  h1 {
-    font-size: 2.9rem;
-    line-height: 0.95;
-    letter-spacing: -0.05em;
-  }
+.hero-logo img:hover {
+  transform: translateY(14px) scale(1.02);
+}
 
-  .lead {
-    font-size: 1.02rem;
-  }
+h1 {
+  font-size: 2.9rem;
+  line-height: 0.93;
+  letter-spacing: -0.055em;
+}
+
+.eyebrow {
+  margin-top: -4px;
+  margin-bottom: 6px;
+}
+
+.lead {
+  font-size: 1.02rem;
+}
 
   .eyebrow {
     margin-bottom: 8px;
@@ -714,29 +740,36 @@ footer {
   }
 
   .hero-logo {
-    height: 180px;
-    margin-bottom: -2px;
-  }
+  height: 170px;
+  margin-bottom: -4px;
+}
 
-  .hero-logo img {
-    width: 136%;
-    max-width: none;
-    transform: translateY(8px);
-  }
+.hero-logo::after {
+  width: 70%;
+  height: 18px;
+}
 
-  .hero-logo img:hover {
-    transform: translateY(8px) scale(1.02);
-  }
+.hero-logo img {
+  width: 132%;
+  max-width: none;
+  transform: translateY(12px);
+}
 
-  h1 {
-    font-size: 2.55rem;
-  }
+.hero-logo img:hover {
+  transform: translateY(12px) scale(1.02);
+}
 
-  .eyebrow {
-    margin-bottom: 6px;
-    font-size: 0.76rem;
-    padding: 9px 14px;
-  }
+h1 {
+  font-size: 2.5rem;
+  line-height: 0.94;
+}
+
+.eyebrow {
+  margin-top: -4px;
+  margin-bottom: 6px;
+  font-size: 0.76rem;
+  padding: 9px 14px;
+}
 
   .btn {
     width: 100%;
@@ -772,9 +805,9 @@ footer {
 
           <div class="eyebrow">Premium Product Page Improvement</div>
 
-          <h1>Make your product page feel worth buying from.</h1>
+          <h1>Make your product page feel impossible to ignore.</h1>
 
-<p class="lead">
+<<p class="lead">
   Stronger copy, sharper structure, premium mock-up direction, and cleaner presentation built to make your product feel more trusted, more desirable, and more ready to convert.
 </p>
 
