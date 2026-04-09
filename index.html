@@ -542,7 +542,21 @@
 
 .hero-logo {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.hero-logo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0,120,255,0.25), transparent 70%);
+  filter: blur(40px);
+  z-index: 0;
 }
 .hero-logo img {
   height: 170px;
