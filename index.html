@@ -642,16 +642,16 @@ footer {
     padding: 22px;
   }
 
-  .hero-logo {
-    height: 180px;
-    margin-bottom: 20px;
-  }
+  .hero-logo img {
+  width: 100%;
+  max-width: none;
+}
 
   .hero-logo img {
-    width: 95%;
-    max-width: 340px;
-    height: auto !important;
-  }
+  width: 100%;
+  max-width: none; /* 🔥 THIS FIXES EVERYTHING */
+  height: auto !important;
+}
 
   h1 {
     font-size: 2.9rem;
@@ -681,10 +681,10 @@ footer {
     width: 64px;
   }
 
-  .hero-logo {
-    height: 170px;
-    margin-bottom: 18px;
-  }
+  .hero-logo img {
+  width: 110%;
+  max-width: none;
+}
 
   .hero-logo img {
     width: 100%;
