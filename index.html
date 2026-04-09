@@ -81,7 +81,7 @@ img {
 }
 
 .nav-logo {
-  width: 90px;
+  width: 110px;
   height: auto;
   object-fit: contain;
   display: block;
@@ -223,6 +223,7 @@ img {
   filter:
     drop-shadow(0 24px 55px rgba(0, 102, 255, 0.55))
     drop-shadow(0 0 65px rgba(0, 140, 255, 0.22));
+    animation: float 6s ease-in-out infinite;
 }
 
 .hero-logo img:hover {
@@ -290,7 +291,7 @@ h1 {
 .btn-primary {
   background: linear-gradient(135deg, var(--accent), #7eb5ff);
   color: #04101f;
-  box-shadow: 0 16px 35px rgba(87, 141, 255, 0.28);
+  box-shadow: 0 18px 45px rgba(87, 141, 255, 0.45);
 }
 
 .btn-primary:hover {
@@ -774,6 +775,11 @@ h1 {
   .btn {
     width: 100%;
   }
+  @keyframes float {
+  0% { transform: translateY(18px); }
+  50% { transform: translateY(12px); }
+  100% { transform: translateY(18px); }
+}
 }
 </style>
 </head>
@@ -805,17 +811,20 @@ h1 {
 
           <div class="eyebrow">Premium Product Page Improvement</div>
 
-          <h1>Make your product page feel impossible to ignore.</h1>
+         <h1>Turn browsers into buyers — without changing your product.</h1>
 
-<<p class="lead">
-  Stronger copy, sharper structure, premium mock-up direction, and cleaner presentation built to make your product feel more trusted, more desirable, and more ready to convert.
+<p class="lead">
+Most product pages don’t fail because of the product — they fail because they don’t feel worth buying. I restructure your page, refine your copy, and guide your visuals so your product feels premium, trusted, and easy to say yes to.
 </p>
 
           <div class="cta-row">
-            <a href="#contact" class="btn btn-primary">Start Your Project</a>
-            <a href="#pricing" class="btn btn-secondary">View Pricing</a>
+            <a href="#contact" class="btn btn-primary">Upgrade My Product Page</a>
+<a href="#pricing" class="btn btn-secondary">See How It Works</a>
           </div>
 
+<p class="trust-line">
+No fluff. No templates. Just strategic upgrades designed to make your product sell.
+</p>
           <div class="trust-line">
             Built for brands that want their products to look better, read better, and convert harder.
           </div>
@@ -845,8 +854,29 @@ h1 {
         </div>
       </div>
     </section>
+<section class="section">
+  <div class="wrap split">
 
-    <section id="services" class="section">
+    <div class="statement">
+      <h3>Your product isn’t the problem.</h3>
+      <p>
+        If people aren’t buying, it’s usually because your page doesn’t feel convincing enough, clear enough, or premium enough.
+      </p>
+    </div>
+
+    <div class="statement">
+      <h3>I fix how your product is perceived.</h3>
+      <ul class="checks">
+        <li>Make your product feel higher value</li>
+        <li>Remove confusion and hesitation</li>
+        <li>Guide customers toward buying</li>
+        <li>Turn your page into a conversion asset</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+    <section id="What I Improve" class="section">
       <div class="wrap">
         <div class="section-title">
           <div class="tag">Services</div>
@@ -858,24 +888,18 @@ h1 {
 
         <div class="grid-3">
           <div class="card">
-            <h3>Product page copy improvement</h3>
-            <p>
-              Sharper descriptions, stronger product wording, cleaner flow, and messaging that makes the value easier to feel.
-            </p>
+            <h3>Stronger Buying Decisions</h3>
+<p>Your product is positioned to feel like the obvious choice.</p>
           </div>
 
           <div class="card">
-            <h3>Mock-up direction</h3>
-            <p>
-              Premium visual direction to help your product look more polished, more desirable, and more worth the price.
-            </p>
+<h3>Higher Perceived Value</h3>
+<p>Your page looks and reads like a premium brand.</p>
           </div>
 
           <div class="card">
-            <h3>Sales-focused page structure</h3>
-            <p>
-              Better order, clearer buyer journey, and stronger emphasis on what actually makes people trust and buy.
-            </p>
+            <h3>Clearer Structure</h3>
+<p>No confusion. No friction. Just a smooth path to purchase.</p>
           </div>
         </div>
       </div>
@@ -920,7 +944,9 @@ h1 {
         </div>
       </div>
     </section>
-
+<p class="trust-line" style="margin-bottom:20px;">
+Most clients don’t need more traffic — they need a page that converts the traffic they already have.
+</p>
     <section id="pricing" class="section">
       <div class="wrap">
         <div class="section-title">
