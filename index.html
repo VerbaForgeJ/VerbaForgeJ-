@@ -133,7 +133,7 @@
     }
 
     h1 {
-      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      font-size: 2.1rem;
       line-height: 1.04;
       margin: 0 0 16px;
       letter-spacing: -0.04em;
@@ -511,14 +511,16 @@
       }
     }
 
-    @media (max-width: 720px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
+    
+@media (max-width: 720px) {
+  .nav {
+    align-items: center;
+    flex-direction: column;
       }
 
-      .nav-links {
-        gap: 14px;
+    .nav-links {
+    justify-content: center;
+    gap: 12px 18px;
       }
 
       .panel,
@@ -559,7 +561,7 @@
   z-index: 0;
 }
 .hero-logo img {
-  height: 170px;
+  height: 120px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -575,31 +577,30 @@
   transition: 0.3s ease;
 }
 .nav-logo {
-  width: 48px;
-  height: 48px;
+  width: 70px;
+  height: auto;
   object-fit: contain;
   background: transparent;
   border: none;
-
   filter: drop-shadow(0 6px 18px rgba(0, 102, 255, 0.5));
 }
   </style>
 </head>
 <body>
   <header class="topbar">
-    <div class="wrap nav">
-     <<a href="#top" class="brand">
-  <img src="verbaforgej-logo.png" class="nav-logo">
-</a>
-      <nav class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#why">Why It Works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#process">How It Works</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="verbaforgej-logo.png" class="nav-logo" alt="VerbaForgeJ logo">
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">How It Works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
   <main id="top">
     <section class="hero">
