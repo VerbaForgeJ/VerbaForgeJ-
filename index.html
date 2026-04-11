@@ -695,35 +695,29 @@
 
       <form action="https://formspree.io/f/mreojayz" method="POST">
 
-  <!-- Redirect to your custom thank you page -->
-  <input type="hidden" name="_redirect" value="https://verbaforgej.github.io/VerbaForgeJ-/thank-you.html">
-
-  <!-- Optional: Email subject -->
+  <input type="hidden" name="_next" value="https://verbaforgej.github.io/VerbaForgeJ-/thank-you.html">
   <input type="hidden" name="_subject" value="New VerbaForgeJ Lead">
-
-  <!-- Optional: Disable captcha (cleaner UX) -->
   <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
 
-        <select name="service" required>
-          <option value="" disabled selected>Select service</option>
-          <option value="sales-copy-upgrade">Sales copy upgrade</option>
-          <option value="product-presentation-upgrade">Product presentation upgrade</option>
-          <option value="copy-and-structure-improvement">Copy and structure improvement</option>
-          <option value="full-premium-upgrade">Full premium upgrade</option>
-        </select>
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
 
-        <textarea name="details" placeholder="Project details" required></textarea>
+  <select name="service" required>
+    <option value="" disabled selected>Select service</option>
+    <option value="sales-copy-upgrade">Sales copy upgrade</option>
+    <option value="product-presentation-upgrade">Product presentation upgrade</option>
+    <option value="copy-and-structure-improvement">Copy and structure improvement</option>
+    <option value="full-premium-upgrade">Full premium upgrade</option>
+  </select>
 
-        <input type="hidden" name="_next" value="https://verbaforgej.github.io/VerbaForgeJ-/thank-you.html">
+  <textarea name="details" placeholder="Project details" required></textarea>
 
-        <button type="submit">Start Your Project</button>
+  <button type="submit">Start Your Project</button>
 
-        <p class="form-trust">
-          No commitment required — just send your details and I will recommend the best option.
-        </p>
-      </form>
+  <p class="form-trust">
+    No commitment required — just send your details and I will recommend the best option.
+  </p>
+</form>
     </div>
   </section>
 
