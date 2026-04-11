@@ -431,6 +431,12 @@
       .hero-actions {
         flex-direction: column;
       }
+      .form-status{
+  margin-top:14px;
+  font-size:0.95rem;
+  color:#9fe3b1;
+  line-height:1.5;
+}
     }
   </style>
 </head>
@@ -693,9 +699,7 @@
         </p>
       </div>
 
-      <form action="https://formspree.io/f/mreojayz" method="POST">
-
-  <input type="hidden" name="_next" value="https://verbaforgej.github.io/VerbaForgeJ-/thank-you.html">
+      <form id="contact-form" action="https://formspree.io/f/mreojayz" method="POST">
   <input type="hidden" name="_subject" value="New VerbaForgeJ Lead">
   <input type="hidden" name="_captcha" value="false">
 
@@ -712,12 +716,61 @@
 
   <textarea name="details" placeholder="Project details" required></textarea>
 
-  <button type="submit">Start Your Project</button>
+  <button type="submit" id="form-button">Start Your Project</button>
 
   <p class="form-trust">
     No commitment required — just send your details and I will recommend the best option.
   </p>
+
+  <p id="form-status" class="form-status" style="display:none;"></p>
 </form>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const button = document.getElementById('form-button');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    button.disabled = true;
+    button.textContent = 'Sending...';
+
+    status.style.display = 'none';
+    status.textContent = '';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        status.style.display = 'block';
+        status.innerHTML = 'Thanks — your project request has been sent successfully.';
+        button.textContent = 'Sent';
+        setTimeout(() => {
+          window.location.href = 'thank-you.html';
+        }, 1200);
+      } else {
+        const data = await response.json();
+        status.style.display = 'block';
+        status.textContent = data.errors?.[0]?.message || 'Something went wrong. Please try again.';
+        button.disabled = false;
+        button.textContent = 'Start Your Project';
+      }
+    } catch (error) {
+      status.style.display = 'block';
+      status.textContent = 'Connection issue. Please try again.';
+      button.disabled = false;
+      button.textContent = 'Start Your Project';
+    }
+  });
+</script>
     </div>
   </section>
 
